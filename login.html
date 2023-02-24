@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #mainSec {
+            width: 70%;
+            margin: auto;
+            border: 1px solid red;
+            height: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mainSec">
+        <label>Your Email</label>
+        <input id="userEmail" type="email" /><br />
+        <label>Your Password</label>
+        <input id="userPassword" type='password' /><br />
+        <button onclick="login()">Login</button><br />
+        <button onclick="window.location.href ='/register.html'">Register</button>
+    </div>
+    <script>
+        function login() {
+            // alert("workling")
+            var userEmail = document.getElementById("userEmail").value;
+            var userPassword = document.getElementById("userPassword").value;
+
+            if (userEmail && userPassword) {
+                var flagForSucces = false;
+                var userListFromLS = JSON.parse(localStorage.getItem("users"));
+                for (var i = 0; i < userListFromLS.length; i++) {
+                    // console.log(userListFromLS[i]);
+                    if (userEmail == userListFromLS[i].userEmail && userPassword == userListFromLS[i].userPassword) {
+                        // console.log('got user')
+                        flagForSucces = true;
+                    }
+                }
+                if(flagForSucces == true){
+                    // console.log("got user")
+                    localStorage.setItem("isUsedLogged",JSON.stringify(true));
+                    window.location.href = '/home.html';
+                    alert("Login in Successful !")
+                } else {
+                   alert("No user found, Check cred again!")
+                }
+            }
+
+            document.getElementById("userEmail").value = '';
+            document.getElementById("userPassword").value = '';
+
+
+        }
+    </script>
+</body>
+
+</html>

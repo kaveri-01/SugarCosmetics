@@ -1,0 +1,16 @@
+Register
+Step 1 - take user info from html and store it into ls.
+Step 2 - html to js to ls 
+Step 3 - push user to Login page
+
+Login  
+Step 1 - take user login info from html
+Step 2 - take Registerierd user list from ls 
+Step 3 - compare login info with user list which we got from ls 
+Step 4 - if we found user that already register show him success or tell him to register..
+
+evnets - onclick 
+
+
+{name,email,password}
+[{name,e,p},{swa,e,p},{kau,e,p}]

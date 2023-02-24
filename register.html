@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #mainSec {
+            width: 70%;
+            margin: auto;
+            border: 1px solid red;
+            height: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mainSec">
+        <label>Your Name</label>
+        <input id="userName" type="text" /> <br />
+        <label>Your Email</label>
+        <input id="userEmail" type="email" /><br />
+        <label>Your Password</label>
+        <input id="userPassword" type="password" /> <br />
+        <button onclick="register()">Register</button>
+        <button onclick="window.location.href= '/login.html'">Login</button>
+    </div>
+    <script>
+        function register() {
+            // alert("working")
+            var userName = document.getElementById("userName").value;
+            console.log(userName, "userName")
+            var userEmail = document.getElementById("userEmail").value;
+            console.log(userEmail, "userEmail")
+            var userPassword = document.getElementById("userPassword").value;
+            console.log(userPassword, "userPassword")
+
+            if (userName && userEmail && userPassword) {
+                if (userPassword.length >= 8) {
+                    var userList = JSON.parse(localStorage.getItem("users")) || [];
+                    userList.push({ userName, userEmail, userPassword });
+                    localStorage.setItem("users", JSON.stringify(userList));
+                    document.getElementById("userName").value = '';
+                    document.getElementById("userEmail").value = '';
+                    document.getElementById("userPassword").value = '';
+                    window.location.href = '/login.html';
+                    alert("Resgistration Done! Now login yourself..")
+                } else {
+                    alert("Password should be more than 8 digits..")
+                }
+            } else {
+                alert("Fill all details..")
+            }
+        }
+
+    </script>
+</body>
+
+</html>
