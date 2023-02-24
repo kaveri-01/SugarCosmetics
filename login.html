@@ -7,25 +7,187 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+     
+     * {
+            margin: 0;
+            padding: 0;
+        }
+
         #mainSec {
             width: 70%;
             margin: auto;
-            border: 1px solid red;
+            /* border: 1px solid red; */
             height: 100px;
             text-align: center;
+            justify-content: space-between;
+        }
+
+        #mainSec label,
+        input {
+            margin-top: 10px;
+        }
+
+        #mainSec button {
+            margin-top: 10px;
+            color: black;
+            gap: 15px;
+        }
+
+        #mainSec>button :hover {
+            color: white;
+        }
+
+        #screen {
+            width: 100%;
+            height: 700px;
+            border: 5px solid red;
+            background: linear-gradient(to right, #f32170,
+                    #ff6b08, #cf23cf, #eedd44);
+        }
+
+        #loginSec {
+            width: 30%;
+            margin: auto;
+            background-color: white;
+            border-radius: 10px;
+            border: 1px solid white;
+            height: 550px;
+            margin-top: 100px;
+        }
+
+        #innerSec {
+            width: 80%;
+            margin: auto;
+            height: 90%;
+            margin-top: 10%;
+            text-align: center;
+        }
+        #innerSec>div:nth-child(1){
+            margin-bottom: 50px;
+        }
+
+        #innerSec>div:nth-child(2) {
+            border-bottom: 1px solid grey;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        #innerSec>div:nth-child(2)>input {
+            width: 100%;
+            height: 40px;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 0;
+        }
+
+        #innerSec>div:nth-child(2)>input::placeholder {
+            color: rgb(193, 191, 191);
+        }
+
+        #innerSec>div:nth-child(3) {
+            border-bottom: 1px solid grey;
+            text-align: left;
+            margin-bottom: 50px;
+        }
+
+        #innerSec>div:nth-child(3)>input {
+            width: 100%;
+            height: 40px;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 0;
+        }
+
+        #innerSec>div:nth-child(3)>input::placeholder {
+            color: rgb(193, 191, 191);
+        }
+
+        /* #innerSec>div:nth-child(4) {
+            border-bottom: 1px solid grey;
+            text-align: left;
+            margin-bottom: 60px;
+        }
+
+        #innerSec>div:nth-child(4)>input {
+            width: 100%;
+            height: 40px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 0;
+        }
+
+        #innerSec>div:nth-child(4)>input::placeholder {
+            color: rgb(175, 174, 174);
+        } */
+
+        #innerSec>div:nth-child(4) {
+            margin-bottom: 20px;
+        }
+
+        #innerSec>div:nth-child(4)>button {
+            width: 100%;
+            border-radius: 17px;
+            height: 35px;
+            border: none;
+            background: linear-gradient(to right, #f32170,
+                    #ff6b08, #cf23cf, #eedd44);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        #innerSec>div:nth-child(5)>button {
+            width: 100%;
+            border-radius: 17px;
+            height: 35px;
+            border: none;
+            background: linear-gradient(to right, #f32170,
+                    #ff6b08, #cf23cf, #eedd44);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
         }
     </style>
 </head>
-
 <body>
-    <div id="mainSec">
-        <label>Your Email</label>
-        <input id="userEmail" type="email" /><br />
-        <label>Your Password</label>
-        <input id="userPassword" type='password' /><br />
-        <button onclick="login()">Login</button><br />
-        <button onclick="window.location.href ='/register.html'">Register</button>
+
+<div id="screen">
+      <div id="loginSec">
+            <div id="innerSec">
+                <div>
+                    <h1>LOGIN</h1>
+                </div>
+                <div>
+                    <p>Email</p>
+                    <input id="userEmail" placeholder="Type your email.." />
+                </div>
+
+                <div>
+                    <p>Password</p>
+                    <input id="userPassword" placeholder="Type your password.." />
+                </div>
+
+                <div>
+                    <button onclick="login()">Login</button>
+                </div>
+
+                <div>
+                    <button onclick="window.location.href= '/register.html'">REGISTER</button>
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
+
     <script>
         function login() {
             // alert("workling")
