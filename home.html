@@ -15,6 +15,7 @@
 
         #fullScreen {
             width: 100%;
+            height: 3000px;
         }
 
         #topNav {
@@ -28,18 +29,15 @@
 
         #topNav>div:nth-child(1) {
             width: 68%;
-            border: 1px solid red;
             display: flex;
         }
 
         #topNav>div:nth-child(2) {
             width: 20%;
-            border: 1px solid green;
         }
 
         #topNav>div:nth-child(3) {
             width: 10%;
-            border: 1px solid blue;
         }
 
         #topNav>div:nth-child(1)>div:nth-child(1)>img {
@@ -100,7 +98,132 @@
             display: flex;
             margin-top: 30px;
             margin-left: 30px;
-            
+            gap: 1px;
+
+        }
+
+        #topNav>div:nth-child(3)>div:nth-child(1)>i {
+            margin-top: 20px;
+            margin-left: 20px;
+            color: black;
+            display: flex;
+        }
+
+        #smallNav {
+            height: 60px;
+            width: 100%;
+            background-color: rgb(25, 24, 24);
+            color: white;
+            font-weight: lighter;
+        }
+
+        #smallNav>div {
+            display: flex;
+            /* justify-content: space-between; */
+            margin-left: 5px;
+            margin-right: 270px;
+            justify-content: space-evenly;
+        }
+
+        #smallNav>div>p {
+            margin-top: 18px;
+        }
+
+        #slider {
+            width: 100%;
+
+        }
+
+        #slider>div>img {
+            width: 100%;
+        }
+
+        #bestDeals {
+            width: 100%;
+            background-color: rgb(12, 12, 146);
+            height: 600px;
+        }
+
+        #bestDeals>div:nth-child(1) {
+            text-align: center;
+            padding-top: 40px;
+            margin-bottom: 35px;
+        }
+
+        #bestDeals>div:nth-child(1)>h1 {
+            color: white;
+            font-size: 22px;
+        }
+
+        #bestDeals>div:nth-child(2) {
+            display: flex;
+            flex-wrap: wrap;
+            width: 80%;
+            margin: auto;
+            height: 400px;
+            justify-content: space-between;
+        }
+
+        #bestDeals>div:nth-child(2)>div {
+            width: 23%;
+            height: 100%;
+            border: 1px solid black;
+            background-color: white;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        #bestDeals>div:nth-child(2)>div>div:nth-child(1) {
+            width: 70%;
+            margin: auto;
+            height: 70%;
+        }
+
+        #bestDeals>div:nth-child(2)>div>div:nth-child(2) {
+            width: 90%;
+            margin: auto;
+            height: 10%;
+            margin-top: 20%;
+        }
+
+        #bestDeals>div:nth-child(2)>div>div:nth-child(1)>img {
+            width: 80%;
+            height: 230px;
+            border-radius: 10px;
+        }
+
+        #bestDeals>div:nth-child(2)>div>div:nth-child(1)>p {
+            font-size: 14px;
+            height: 35px;
+        }
+
+        #bestDeals>div:nth-child(2)>div>div:nth-child(2) {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #bestDeals>div:nth-child(2)>div>div:nth-child(2)>div:nth-child(1) {
+            width: 16%;
+            border-radius: 10px;
+            border: 1px solid black;
+            height: 100%;
+        }
+
+        #bestDeals>div:nth-child(2)>div>div:nth-child(2)>div:nth-child(1) > i {
+            margin-top: 20px;
+        }
+        #bestDeals>div:nth-child(2)>div>div:nth-child(2)>div:nth-child(2) {
+            width: 75%;
+            border-radius: 10px;
+            background-color: black;
+            height: 100%;
+            color: white;
+        }
+
+        #bestDeals>div:nth-child(2)>div>div:nth-child(2)>div:nth-child(2)>p {
+            font-size: 14px;
+            margin-top: 10px;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -120,6 +243,7 @@
                     </div>
                 </div>
             </div>
+
             <div>
                 <div>
                     <i class="fa-solid fa-user"></i>
@@ -127,11 +251,110 @@
                 </div>
 
             </div>
-            <div> symbols</div>
+            <div>
+                <i class="fa-duotone fa-heart"></i>
+                <i class="fa-regular fa-bag-shopping"></i>
+                <i class="fa-regular fa-gear"></i>
+            </div>
         </div>
-        <div id="smallNav"></div>
-        <div id="slider"></div>
-        <div id="bestDeals"></div>
+        <div id="smallNav">
+            <div>
+                <p>LIPS</p>
+                <p>EYES</p>
+                <p>FACE</p>
+                <p>SKINCARE</p>
+                <p>ACCESERIES</p>
+                <p>GIFTS AND KITS</p>
+                <p>BESTSELLERS</p>
+                <p>NEWLAUNCHES</p>
+                <p>OFFERS</p>
+                <p>BLOG</p>
+                <P>STORES</P>
+            </div>
+        </div>
+
+        <div id="slider">
+            <div>
+                <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2F3cac28f7-7ff8-4bda-b877-abacc490e85a.jpg&w=1920&q=75"
+                    alt="">
+                <!-- <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2Fe87bf28f-6430-45fa-bd97-49fdb1705df0.jpg&w=1920&q=75" alt="">
+            <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2F53677975-a216-41b9-91cf-42909c82d975.jpg&w=1920&q=75" alt="">
+            <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2Fc8a0aa10-0c57-48e4-8882-31662d4c3c78.jpg&w=1920&q=75" alt="">
+            <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2Fab569f69-5f23-4018-8a74-8657fc279ac3.jpg&w=1920&q=75" alt="">
+            <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2Fe4ea7d7e-eba9-41ac-9010-3856b42d3ffa.jpg&w=1920&q=75" alt="">
+            <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2F069d0c1c-f78c-4d80-94f9-e65f3bbdda73.jpg&w=1920&q=75" alt="">
+            <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fd32baadbbpueqt.cloudfront.net%2FHomepage%2F9723d8e3-9e99-459f-acfe-4ef93089e9ef.jpg&w=1920&q=75" alt=""> -->
+            </div>
+        </div>
+        <div id="bestDeals">
+            <div>
+                <h1>BEST SELLERS</h1>
+            </div>
+            <div>
+                <div>
+                    <div>
+                        <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Fproducts%2Fsugar-cosmetics-face-fwd-contour-stick-01-fawn-first-milk-chocolate-brown-13825383923795.jpg%3Fv%3D1619116453&w=256&q=75"
+                            alt="">
+                        <p>Face Fwd >> Contour Stick - 01 <br>
+                            Fawn First </p>
+                        <h3> ₹680</h3>
+                    </div>
+                    <div>
+                        <div><i class="fa-regular fa-heart fa-xl"></i></div>
+                        <div>
+                            <p>ADD TO BAG</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+
+                        <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Fproducts%2F01_d6ffec78-c2b6-4466-8672-233fee0285a8.jpg%3Fv%3D1644394232&w=256&q=75"
+                            alt="">
+                        <p>Matte As Hell Crayon Lipstick <br>
+                            32 shades </p>
+                        <h3>₹849.00</h3>
+                    </div>
+                    <div>
+                        <div><i class="fa-regular fa-heart fa-xl"></i></div>
+                        <div>
+                            <p>ADD TO BAG</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+
+                        <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Fproducts%2F3_7.jpg%3Fv%3D1626795160&w=256&q=75"
+                            alt="">
+                        <p>
+                            All Set To Go Translucent Powder
+                        </p>
+                        <h3>₹599.00</h3>
+                    </div>
+                    <div>
+                        <div><i class="fa-regular fa-heart fa-xl"></i></div>
+                        <div>
+                            <p>ADD TO BAG</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Fproducts%2F1_6f55bcac-3e42-4253-88ee-cec0fa43c62a.jpg%3Fv%3D1645608270&w=256&q=75"
+                            alt="">
+                        <p>Matte Attack Transferproof Lipstick - 01 <br>
+                        <h3>₹749.00</h3>
+                    </div>
+                    <div>
+                        <div><i class="fa-regular fa-heart fa-xl"></i></div>
+                        <div>
+                            <p>ADD TO BAG</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
 
 </html>
