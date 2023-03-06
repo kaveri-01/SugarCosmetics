@@ -163,7 +163,6 @@
         #mainSec>button :hover {
             color: white;
         }
-
         #screen {
             margin-top: 130px;
             width: 100%;
@@ -179,7 +178,6 @@
             border-radius: 10px;
             border: 1px solid white;
             height: 550px;
-            
         }
 
         #innerSec {
@@ -190,9 +188,8 @@
             text-align: center;
             padding-top: 20px;
         }
-
-        #innerSec>div:nth-child(1) {
-            margin-bottom: 40px;
+        #innerSec>div:nth-child(1){
+            margin-bottom: 50px;
         }
 
         #innerSec>div:nth-child(2) {
@@ -218,7 +215,7 @@
         #innerSec>div:nth-child(3) {
             border-bottom: 1px solid grey;
             text-align: left;
-            margin-bottom: 30px;
+            margin-bottom: 50px;
         }
 
         #innerSec>div:nth-child(3)>input {
@@ -236,42 +233,21 @@
         }
 
         #innerSec>div:nth-child(4) {
-            border-bottom: 1px solid grey;
-            text-align: left;
-            margin-bottom: 60px;
-        }
-
-        #innerSec>div:nth-child(4)>input {
-            width: 100%;
-            height: 40px;
-            border: none;
-            outline: none;
-            font-size: 16px;
-            font-weight: bold;
-            margin-top: 0;
-        }
-
-        #innerSec>div:nth-child(4)>input::placeholder {
-            color: rgb(175, 174, 174);
-        }
-
-        #innerSec>div:nth-child(5) {
             margin-bottom: 20px;
         }
 
-        #innerSec>div:nth-child(5)>button {
+        #innerSec>div:nth-child(4)>button {
             width: 100%;
             border-radius: 17px;
             height: 35px;
             border: none;
-            background-color: black;
+            background-color:black;
             color: white;
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
         }
-
-        #innerSec>div:nth-child(6)>button {
+        #innerSec>div:nth-child(5)>button {
             width: 100%;
             border-radius: 17px;
             height: 35px;
@@ -305,7 +281,7 @@
       <div>
         <div>
           <i class="fa-solid fa-user"></i>
-          <p>Login/Register</p>
+          <p><a href="Register.html">Login/Register</a></p>
         </div>
 
       </div>
@@ -332,62 +308,66 @@
     </div>
     <div id="screen">
         <div id="loginSec">
-            <div id="innerSec">
-                <div>
-                    <h1>REGISTER</h1>
-                </div>
-                <div>
-                    <p>Name</p>
-                    <input id="userName" placeholder="Type your name.." />
-                </div>
-                <div>
-                    <p>Email</p>
-                    <input id="userEmail" placeholder="Type your email.." />
-                </div>
-                <div>
-                    <p>Password</p>
-                    <input id="userPassword" placeholder="Type your password.." />
-                </div>
-                <div>
-                    <button onclick="register()">REGISTER</button>
-                </div>
-                <div>
-                    <button onclick="window.location.href= '/login.html'">LOGIN</button>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-    <script>
-        function register() {
-            // alert("working")
-            var userName = document.getElementById("userName").value;
-            console.log(userName, "userName")
-            var userEmail = document.getElementById("userEmail").value;
-            console.log(userEmail, "userEmail")
-            var userPassword = document.getElementById("userPassword").value;
-            console.log(userPassword, "userPassword")
-
-            if (userName && userEmail && userPassword) {
-                if (userPassword.length >= 8) {
-                    var userList = JSON.parse(localStorage.getItem("users")) || [];
-                    userList.push({ userName, userEmail, userPassword });
-                    localStorage.setItem("users", JSON.stringify(userList));
-                    document.getElementById("userName").value = '';
-                    document.getElementById("userEmail").value = '';
-                    document.getElementById("userPassword").value = '';
-                    window.location.href = '/login.html';
-                    alert("Resgistration Done! Now login yourself..")
-                } else {
-                    alert("Password should be more than 8 digits..")
-                }
-            } else {
-                alert("Fill all details..")
-            }
-        }
-
-    </script>
-    </body>
-</html>
+              <div id="innerSec">
+                  <div>
+                      <h1>LOGIN</h1>
+                  </div>
+                  <div>
+                      <p>Email</p>
+                      <input id="userEmail" placeholder="Type your email.." />
+                  </div>
+  
+                  <div>
+                      <p>Password</p>
+                      <input id="userPassword" placeholder="Type your password.." />
+                  </div>
+  
+                  <div>
+                      <button onclick="login()">Login</button>
+                  </div>
+  
+                  <div>
+                      <button onclick="window.location.href= '/register.html'">REGISTER</button>
+                  </div>
+  
+              </div>
+  
+          </div>
+  
+      </div>
+  
+      <script>
+          function login() {
+              // alert("workling")
+              var userEmail = document.getElementById("userEmail").value;
+              var userPassword = document.getElementById("userPassword").value;
+  
+              if (userEmail && userPassword) {
+                  var flagForSucces = false;
+                  var userListFromLS = JSON.parse(localStorage.getItem("users"));
+                  for (var i = 0; i < userListFromLS.length; i++) {
+                      // console.log(userListFromLS[i]);
+                      if (userEmail == userListFromLS[i].userEmail && userPassword == userListFromLS[i].userPassword) {
+                          // console.log('got user')
+                          flagForSucces = true;
+                      }
+                  }
+                  if(flagForSucces == true){
+                      // console.log("got user")
+                      localStorage.setItem("isUsedLogged",JSON.stringify(true));
+                      window.location.href = '/home.html';
+                      alert("Login in Successful !")
+                  } else {
+                     alert("No user found, Check cred again!")
+                  }
+              }
+  
+              document.getElementById("userEmail").value = '';
+              document.getElementById("userPassword").value = '';
+  
+  
+          }
+      </script>
+  </body>
+  
+  </html>
